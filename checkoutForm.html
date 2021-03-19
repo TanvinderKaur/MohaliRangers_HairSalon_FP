@@ -13,7 +13,7 @@
      <meta name="description" content="">
      <meta name="author" content="">
      <!-- style css -->
-     <link rel="stylesheet" href="css/style.css">
+     <link rel="stylesheet" href="checkoutForm.css">
      <!-- Responsive-->
      <link rel="stylesheet" href="css/responsive.css">
      <!-- fevicon -->
@@ -21,7 +21,7 @@
  
 </head>
 
-<header>
+<!-- <header>
 
     <div class="top-header">
         <a href="index.html">
@@ -31,7 +31,7 @@
         <a id="logoutId" onclick="LogOut();return false" class="text-right sign-up wishlist">logout</a>
     </div>
 
-    <div class="nav">
+     <div class="nav">
         <ul>
             <li class="home"><a href="index.html">Home</a></li>
             <li class="tutorials"><a href="product.html">Product</a></li>
@@ -46,16 +46,17 @@
             <li class="contact wishlist-page" id="wishlist-page"><a class="active" href="wishlist.html">Wishlist</a>
             </li>
         </ul>
-    </div>
+    </div> 
 
-</header>
+</header> -->
 
 <body>
-    <!-- <h1>Add Delivery Details</h1> -->
+    
     <form class="formDetails">
         <fieldset>
             <legend>Add Delivery Details</legend>
-        
+
+        <div class="fields">
         <label for="full" >Full Name:</label>
         <input type="text" id="full" name="fullname"><br>
         <label for="mobile" >Mobile Number:</label>
@@ -63,7 +64,7 @@
         <label for="alternative" >Alternative Number:</label>
         <input type="text" id="alternative" name="number"><br>
         <label for="city" >City:</label>
-        <input type="text" id="city" name="city">       
+        <input type="text" id="city" name="city"> <br>       
         <label for="state" >State:</label>
         <input type="text" id="state" name="Statename"><br>
         <label for="code" >Zipcode:</label>
@@ -71,10 +72,11 @@
         <label for="address" >Full Address:</label>
         <input type="text" id="address" name="add"><br>
         
-        <p>Payment Options</p>
-        <!-- <fieldset>
-            <legend>Payment Options</legend>
-         -->
+        </div>
+
+        <fieldset>
+        <legend class = "paraInCheck">Payment Options</legend>
+       <div class="radioinCheck">
         <input type="radio" name="payment" id="pay" value="payment">
         <label for="pay">Cash On Delivery</label><br>
         <input type="radio" name="payment" id="pay1" value="payment">
@@ -82,21 +84,24 @@
         <input type="radio" name="payment" id="pay2" value="payment">
         <label for="pay">Debit Card</label><br>
 
+    </div>
 
-        <!-- <button onclick="myFunction()">Place order</button>
-        <script>
-            function myFunction()
-                {
-                    alert("Order Placed Successfully")
-                }
-            
-        </script>  -->
+    
 
         <p></p>
         <button type="button" onclick="alert('Order Placed Successfully')">Place Order</button>
+        <button id = "cancel" onclick="myFunction()">Cancel</button>
+        <script>
+            function myFunction()
+                {
+                    alert("Order didn't placed")
+                   window.location.href = "index.html";
+                }
+            
+        </script> 
    
-         <!-- <input type="submit" value ="Place order"> -->
-        <!-- </fieldset> -->
+          <!-- <input type="submit" value ="cancel">  -->
+        </fieldset>
         </fieldset>
     </form>
 
@@ -105,7 +110,7 @@
 </body>
 
 
-<!-- Site footer -->
+<!-- Site footer
 <footer class="footer-distributed">
 
     <div class="footer-left">
@@ -116,18 +121,18 @@
 
     <div class="footer-center">
         <div>
-            <!-- <i class="fa fa-phone"></i> -->
+             <i class="fa fa-phone"></i> 
             <p>+1 456 7890</p>
         </div>
         <div>
-            <!-- <i class="fa fa-map-marker"></i> -->
+            <i class="fa fa-map-marker"></i> 
             <p><span>Near Ivy Hospital</span> Delhi, India</p>
         </div>
 
 
 
         <div>
-            <!-- <i class="fa fa-envelope"></i> -->
+            <i class="fa fa-envelope"></i> 
             <p><a href="mailto:support@company.com">contact@email.com</a></p>
         </div>
 
@@ -142,7 +147,7 @@
         </p>
     </div>
 
-</footer>
+</footer> -->
 
 
 </html>
