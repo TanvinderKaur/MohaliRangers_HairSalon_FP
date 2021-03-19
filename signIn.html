@@ -20,3 +20,25 @@
     <!-- fevicon -->
     <link rel="icon" href="images/fevicon.png" type="image/gif" />
 </head>
+
+<body>
+    <form id="formSignIn" onsubmit="SignIn();return false">
+        <h2>Sign In</h2>
+        <p>
+            <label for="Email" class="floatLabel">Email</label>
+            <input id="Email" name="Email" type="email" required>
+        </p>
+        <p>
+            <label for="password" class="floatLabel">Password</label>
+            <input id="password" required name="password" type="password">
+        </p>
+        <p>
+        <p>Don't have any account? <a href="signUp.html" style="color:#ec1b2e">Sign Up</a></p>
+        <p>Don't want to join Now? <a href="index.html" style="color:#ec1b2e">Go to Home</a></p>
+        <div class="text-right sign-up" id="login-user-email" style="display:none;"></div>
+        <input type="submit" value="Sign In" id="submit">
+        </p>
+    </form>
+    <script src="./js/jquery-3.6.0.min.js"></script>
+    <script src="./js/main.js"></script>
+</body>
