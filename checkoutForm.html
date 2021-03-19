@@ -51,8 +51,11 @@
 </header>
 
 <body>
-    
+    <!-- <h1>Add Delivery Details</h1> -->
     <form class="formDetails">
+        <fieldset>
+            <legend>Add Delivery Details</legend>
+        
         <label for="full" >Full Name:</label>
         <input type="text" id="full" name="fullname"><br>
         <label for="mobile" >Mobile Number:</label>
@@ -66,9 +69,12 @@
         <label for="code" >Zipcode:</label>
         <input type="text" id="code" name="zipcode"><br>
         <label for="address" >Full Address:</label>
-        <input type="textarea" id="address" name="add"><br>
-
+        <input type="text" id="address" name="add"><br>
+        
         <p>Payment Options</p>
+        <!-- <fieldset>
+            <legend>Payment Options</legend>
+         -->
         <input type="radio" name="payment" id="pay" value="payment">
         <label for="pay">Cash On Delivery</label><br>
         <input type="radio" name="payment" id="pay1" value="payment">
@@ -77,17 +83,21 @@
         <label for="pay">Debit Card</label><br>
 
 
-        <button onclick="myFunction()">Place order</button>
+        <!-- <button onclick="myFunction()">Place order</button>
         <script>
             function myFunction()
                 {
                     alert("Order Placed Successfully")
                 }
             
-        </script>
+        </script>  -->
+
+        <p></p>
+        <button type="button" onclick="alert('Order Placed Successfully')">Place Order</button>
    
          <!-- <input type="submit" value ="Place order"> -->
-        
+        <!-- </fieldset> -->
+        </fieldset>
     </form>
 
 
