@@ -11,3 +11,16 @@ $(document).ready(function () {
     }
 
 });
+
+function addToCart(elem) {
+
+    var productName = document.getElementById("product-price-" + elem).innerHTML;
+    var addCard = '<div class="productCard" id="product-price-' + elem + '" >' + productName + '</div > ';
+    var getFavoriteData = localStorage.getItem('cart');
+    if (getFavoriteData !== null && getFavoriteData !== '') {
+        getFavoriteData += addCard;
+    } else {
+        getFavoriteData = addCard;
+    }
+    localStorage.setItem('cart', getFavoriteData);
+}
