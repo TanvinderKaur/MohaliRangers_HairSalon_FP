@@ -4,6 +4,13 @@ body {
     font-family: "Lucida Console";
   }
    
+  .nav ul {
+    list-style: none;
+    background-color: #ec1b2e;
+    text-align: center;
+    padding: 0;
+    margin: 0;
+  }   
 
   .top-header {
     height: 91px;
@@ -13,4 +20,48 @@ body {
     margin-top: 0;
     margin-bottom: 0;
     text-align: center;
+  }
+  .nav li {
+    font-family: 'Oswald', sans-serif;
+    font-size: 1.2em;
+    line-height: 40px;
+    height: 40px;
+    border-bottom: 1px solid #888;
+  }
+
+  .nav a {
+    text-decoration: none;
+    color: #fff;
+    display: block;
+    transition: .3s background-color;
+  }
+   
+  .nav a:hover {
+    background-color: #feffff;
+    color: black;
+  }
+   
+  .nav a.active {
+    background-color: #fff;
+    color: #444;
+    cursor: default;
+  }
+    .nav li {
+      display: inline-block;
+      margin-right: -4px;
+    }
+    
+.formDetails
+  {
+      margin-left: 1em;
+      /* text-align: center; */
+      display: block;
+        float: left;
+
+  }
+
+  .formDetails label{
+      padding-left: 2em;
+      font-weight: bold;
+      /* float: left; */
   }
