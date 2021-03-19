@@ -73,7 +73,7 @@ function SignUp() {
 
 function cancel() {
     alert("Order cancelled");
-    window.location.href = "index.html";
+    window.location = "index.html";
     // window.history.back();
   }
 
@@ -81,7 +81,7 @@ function placed(){
 
     alert("Order placed successfully");
     clearCart();
-    window.history.back();
+    window.location = "index.html";
 
 
 }
