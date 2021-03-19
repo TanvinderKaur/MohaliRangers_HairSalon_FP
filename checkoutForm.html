@@ -50,13 +50,19 @@
 
 </header> -->
 
+
+<header>
+    <h1>  Secure Payment By Gill Infrastructures...</h1>
+</header>
+
 <body>
     
-    <form class="formDetails">
+    <form class="formDetails" onsubmit="placed(); return false">
         <fieldset>
             <legend>Add Delivery Details</legend>
 
         <div class="fields">
+
         <label for="full" >Full Name:</label>
         <input type="text" id="full" name="fullname"><br>
         <label for="mobile" >Mobile Number:</label>
@@ -74,6 +80,7 @@
         
         </div>
 
+
         <fieldset>
         <legend class = "paraInCheck">Payment Options</legend>
        <div class="radioinCheck">
@@ -85,30 +92,30 @@
         <label for="pay">Debit Card</label><br>
 
     </div>
-
-    
-
-        <p></p>
-        <button type="button" onclick="alert('Order Placed Successfully')">Place Order</button>
-        <button id = "cancel" onclick="myFunction()">Cancel</button>
-        <script>
-            function myFunction()
-                {
-                    alert("Order didn't placed")
-                   window.location.href = "index.html";
-                }
-            
-        </script> 
-   
-          <!-- <input type="submit" value ="cancel">  -->
+    <input type="submit" value="place Order" id="submit">
+        <button id= "cance"  onclick="cancel();"> Cancel </button>
+        
         </fieldset>
         </fieldset>
+
     </form>
 
 
+    <script src="./js/jquery-3.6.0.min.js"></script>
+    <script src="./js/main.js"></script>
 
 </body>
+ 
 
+
+
+
+<footer>
+
+    <p>@copyright Subjected to gillMoney</p>
+
+
+</footer>
 
 <!-- Site footer
 <footer class="footer-distributed">
