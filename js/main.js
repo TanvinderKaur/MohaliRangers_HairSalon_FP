@@ -15,7 +15,7 @@ $(document).ready(function () {
 });
 
 function LogOut() {
-    sessionStorage.setItem("SessionName", ' ');
+    sessionStorage.setItem("SessionName", null);
     document.getElementById("logged-in").style.display = "none";
     window.location.href = "index.html";
     alert('Logged Out Successfully');
@@ -107,30 +107,30 @@ $(function () {
 
     setHeight();
 });
-var slideIndex = 1;
-showSlides(slideIndex);
+// var slideIndex = 1;
+// showSlides(slideIndex);
 
-function plusSlides(n) {
-    showSlides(slideIndex += n);
-}
+// function plusSlides(n) {
+//     showSlides(slideIndex += n);
+// }
 
-function currentSlide(n) {
-    showSlides(slideIndex = n);
-}
+// function currentSlide(n) {
+//     showSlides(slideIndex = n);
+// }
 
-function showSlides() {
-    var i;
-    var slides = document.getElementsByClassName("mySlides");
-    var dots = document.getElementsByClassName("dot");
-    for (i = 0; i < slides.length; i++) {
-        slides[i].style.display = "none";
-    }
-    slideIndex++;
-    if (slideIndex > slides.length) { slideIndex = 1 }
-    for (i = 0; i < dots.length; i++) {
-        dots[i].className = dots[i].className.replace(" active", "");
-    }
-    slides[slideIndex - 1].style.display = "block";
-    dots[slideIndex - 1].className += " active";
-    setTimeout(showSlides, 3000); // Change image every 2 seconds
-}
+// function showSlides() {
+//     var i;
+//     var slides = document.getElementsByClassName("mySlides");
+//     var dots = document.getElementsByClassName("dot");
+//     for (i = 0; i < slides.length; i++) {
+//         slides[i].style.display = "none";
+//     }
+//     slideIndex++;
+//     if (slideIndex > slides.length) { slideIndex = 1 }
+//     for (i = 0; i < dots.length; i++) {
+//         dots[i].className = dots[i].className.replace(" active", "");
+//     }
+//     slides[slideIndex - 1].style.display = "block";
+//     dots[slideIndex - 1].className += " active";
+//     setTimeout(showSlides, 3000); // Change image every 2 seconds
+// }
