@@ -14,8 +14,11 @@ $(document).ready(function () {
 
 });
 
+
+var usercart = "";
+
 function LogOut() {
-    sessionStorage.setItem("SessionName", null);
+    sessionStorage.setItem("SessionName", ' ');
     document.getElementById("logged-in").style.display = "none";
     window.location.href = "index.html";
     alert('Logged Out Successfully');
@@ -25,34 +28,37 @@ function addToCart(elem) {
 
     var productName = document.getElementById("product-price-" + elem).innerHTML;
     var addCard = '<div class="productCard" id="product-price-' + elem + '" >' + productName + '</div > ';
-    var getFavoriteData = localStorage.getItem('cart');
+    var getFavoriteData = localStorage.getItem(localStorage.getItem("cartName"));
     if (getFavoriteData !== null && getFavoriteData !== '') {
         getFavoriteData += addCard;
     } else {
         getFavoriteData = addCard;
     }
-    localStorage.setItem('cart', getFavoriteData);
+    localStorage.setItem(localStorage.getItem("cartName"), getFavoriteData);
+
 }
 
 // added to clear the cart 
-function clearCart(){
-   localStorage.removeItem("cart");
-   location.reload();
+function clearCart() {
+    localStorage.removeItem(localStorage.getItem("cartName"));
+    location.reload();
 }
 
-function checkout(){
+function checkout() {
     // window.target = "_blank";
-     window.location.href = "checkoutForm.html";
-    
+    window.location.href = "checkoutForm.html";
+
 }
 
+let data;
 
 function SignIn() {
     let Email = document.getElementById("formSignIn").elements.Email.value;
     let Pass = document.getElementById("formSignIn").elements.password.value;
-    let data = JSON.parse(localStorage.getItem(Email));
+     data = JSON.parse(localStorage.getItem(Email));
     if (data !== null && data.Password === Pass) {
         sessionStorage.setItem("SessionName", data.Email);
+       localStorage.setItem("cartName",data.Cart);
         window.location.href = "index.html";
     } else {
         alert('Invalid Login');
@@ -61,12 +67,14 @@ function SignIn() {
 function SignUp() {
     let data = {
         Email: document.getElementById("formSignUp").elements.Email.value,
-        Website: document.getElementById("formSignUp").elements.website.value,
+        website: document.getElementById("formSignUp").elements.website.value,
         DOB: document.getElementById("formSignUp").elements.date_of_birth.value,
         Password: document.getElementById("formSignUp").elements.password.value,
-        Gender: document.getElementById("formSignUp").elements.gender.value
+        Gender: document.getElementById("formSignUp").elements.gender.value,
+        Cart: document.getElementById("formSignUp").elements.Email.value + "cart"
     }
     localStorage.setItem(data.Email, JSON.stringify(data));
+
     alert('Registered Successfully.Please login now');
     window.location.href = "signIn.html";
 }
@@ -75,9 +83,9 @@ function cancel() {
     alert("Order cancelled");
     window.location = "index.html";
     // window.history.back();
-  }
+}
 
-function placed(){
+function placed() {
 
     alert("Order placed successfully");
     clearCart();
@@ -107,30 +115,3 @@ $(function () {
 
     setHeight();
 });
-// var slideIndex = 1;
-// showSlides(slideIndex);
-
-// function plusSlides(n) {
-//     showSlides(slideIndex += n);
-// }
-
-// function currentSlide(n) {
-//     showSlides(slideIndex = n);
-// }
-
-// function showSlides() {
-//     var i;
-//     var slides = document.getElementsByClassName("mySlides");
-//     var dots = document.getElementsByClassName("dot");
-//     for (i = 0; i < slides.length; i++) {
-//         slides[i].style.display = "none";
-//     }
-//     slideIndex++;
-//     if (slideIndex > slides.length) { slideIndex = 1 }
-//     for (i = 0; i < dots.length; i++) {
-//         dots[i].className = dots[i].className.replace(" active", "");
-//     }
-//     slides[slideIndex - 1].style.display = "block";
-//     dots[slideIndex - 1].className += " active";
-//     setTimeout(showSlides, 3000); // Change image every 2 seconds
-// }
